@@ -1,0 +1,13 @@
+plugins {
+    id("application")
+}
+version = '1.0.0'
+
+dependencies {
+    implementation(project(":subprojectLibB"))
+}
+
+application {
+    mainClass = 'jumpaku.app.MainKt'
+    applicationDefaultJvmArgs = []
+}

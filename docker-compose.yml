@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  # docker-compose up build-all
+  build-all:
+    image: 'gradle:7.0.2-jdk16'
+    command: ["./gradlew", "test"]
+    working_dir: '/home/gradle/project'
+    volumes:
+      - './:/home/gradle/project'
