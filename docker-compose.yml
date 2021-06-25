@@ -4,7 +4,15 @@ services:
   # docker-compose up build-all
   build-all:
     image: 'gradle:7.0.2-jdk16'
-    command: ["./gradlew", "test"]
+    command: ["./gradlew", "build"]
+    working_dir: '/home/gradle/project'
+    volumes:
+      - './:/home/gradle/project'
+
+  # docker-compose up build-all
+  run-app:
+    image: 'gradle:7.0.2-jdk16'
+    command: ["./gradlew", ":subprojectApp:run"]
     working_dir: '/home/gradle/project'
     volumes:
       - './:/home/gradle/project'
